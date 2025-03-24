@@ -72,7 +72,8 @@ function fetchWeather() {
             pictureEl.src = `https://www.hko.gov.hk/images/HKOWxIconOutline/pic${iconid}.png`;
             idState.innerHTML = `天氣狀況：${weatherMatching[iconid]}`;
             rainfallEl.innerText = "雨量：" + data.rainfall.data.find(item => item.place === inlocationEl.value).max + "mm";
-
+            humidityEl.innerText = "濕度：" + data.humidity.data[0].value + "%";
+            tempEl.innerText = "氣溫：" + data.temperature.data.find(item => item.place === "香港天文台").value + "度";
             }
         )
         
